@@ -35,14 +35,8 @@ jobs:
           polaris_assessment_types: "SCA,SAST"
           polaris_application_name: Jeff Test
           polaris_project_name: WebGoat
-          # PR comments cover only issues new in the PR branch.
           polaris_prComment_enabled: true
-          # Left off on purpose: WebGoat has hundreds of issues, so these would
-          # create a flood of GitHub issues / Fix PRs. Enable one at a time.
-          polaris_externalIssues_create: false
-          polaris_fixpr_enabled: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          polaris_reports_sarif_create: true
           polaris_upload_sarif_report: true
           coverity_build_command: ./mvnw -B -DskipTests package
           coverity_clean_command: ./mvnw -B clean
